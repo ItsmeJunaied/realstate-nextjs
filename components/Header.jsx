@@ -2,6 +2,7 @@
 import { faHouse, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
@@ -13,10 +14,18 @@ const Header = () => {
   };
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: "/img1.jpg", title: "DESIGN SLIDER1", topic: "ANIMAL" },
-    { src: "/img2.jpg", title: "DESIGN SLIDER2", topic: "ANIMAL" },
-    { src: "/img3.jpg", title: "DESIGN SLIDER3", topic: "ANIMAL" },
-    { src: "/img4.jpg", title: "DESIGN SLIDER4", topic: "ANIMAL" },
+    { src: "/HeaderImg1.png", title: "Redefining Happiness", topic: "ANIMAL" },
+    { src: "/HeaderImg2.png", title: "A Piece of Heaven", topic: "ANIMAL" },
+    {
+      src: "/HeaderImg3.png",
+      title: "Reviving You On Steps ",
+      topic: "ANIMAL",
+    },
+    {
+      src: "/HeaderImg4.png",
+      title: "A Visual Treat You Can",
+      topic: "ANIMAL",
+    },
   ];
 
   const handlePrev = () => {
@@ -35,7 +44,7 @@ const Header = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNext();
-    }, 2000); // Set interval for auto slide (2 seconds)
+    }, 5000); // Set interval for auto slide (2 seconds)
 
     return () => clearInterval(intervalId); // Cleanup on component unmount
   }, []);
@@ -44,12 +53,12 @@ const Header = () => {
     <div>
       <div>
         {/* Navbar */}
-        <nav className="relative px-4 py-4 flex justify-between items-center bg-[#00000080]  bg-opacity-50  w-full top-0 left-0 z-10">
+        <nav className="relative px-4 py-4 flex justify-between items-center bg-[#00000080] h-[70px]  bg-opacity-50  w-full top-0 left-0 z-10">
           <Image
             src="/logo.png"
             alt="Example Image"
-            width={50}
-            height={80}
+            width={40}
+            height={60}
             priority
           />
           {/* Burger Button for mobile menu */}
@@ -68,36 +77,37 @@ const Header = () => {
               </svg>
             </button>
           </div>
-  
+
           {/* Navbar links (Desktop) */}
-          <ul className="hidden lg:flex lg:mx-auto  lg:items-center lg:w-auto lg:space-x-6">
+          <ul className="hidden lg:flex lg:mx-auto lg:justify-between gap-10  lg:items-center lg:w-auto lg:space-x-6">
             <li>
-              <a className="text-white text-sm font-bold" href="#">
+              <Link className="text-white text-sm font-light" href="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="text-white text-sm font-bold" href="#">
+              <Link className="text-white text-sm font-light" href="/about">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="text-white text-sm font-bold" href="#">
-                Services
-              </a>
+              <Link className="text-white text-sm font-light" href="/projects">
+                Projects
+              </Link>
             </li>
             <li>
-              <a className="text-white text-sm font-bold" href="#">
-                Pricing
-              </a>
+            <Link className="text-white text-sm font-light" href="/blog">
+                Blog
+              </Link>
+
             </li>
             <li>
-              <a className="text-white text-sm font-bold" href="#">
-                Contact
-              </a>
+            <Link className="text-white text-sm font-light" href="/contact">
+                Contact Us
+              </Link>
             </li>
           </ul>
-  
+
           {/* Schedule On Book Button */}
           <a
             className="w-[180px] h-[46px] hidden lg:flex justify-center items-center lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold transition duration-200"
@@ -105,14 +115,14 @@ const Header = () => {
           >
             Schedule On Book
           </a>
-  
+
           {/* Phone Number */}
           <div className="w-[140px] h-[46px] hidden lg:flex items-center gap-2 py-2 px-6 bg-transparent border-[2px] border-white text-sm text-white font-bold transition duration-200">
             <FontAwesomeIcon icon={faPhone} size="sm" className="text-white" />
             <p>16760</p>
           </div>
         </nav>
-  
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="navbar-menu relative z-50">
@@ -207,43 +217,44 @@ const Header = () => {
           </div>
         )}
       </div>
-  
+
       <div>
-        <div className="carousel mt-[80px]"> {/* Add margin-top to avoid overlap */}
+        <div className="carousel mt-[80px]">
+          {" "}
+          {/* Add margin-top to avoid overlap */}
           <div className="list">
             <div className="item">
               <img
+                className="bgimg"
                 src={images[currentIndex].src}
                 alt={images[currentIndex].title}
               />
               <div className="content">
-                <div className="author">LUNDEV</div>
+                <div className="author ">SKYMARK</div>
                 <div className="title">{images[currentIndex].title}</div>
-                <div className="topic">{images[currentIndex].topic}</div>
+                {/* <div className="topic">{images[currentIndex].topic}</div> */}
                 <div className="des">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
                   sequi, rem magnam nesciunt minima placeat...
                 </div>
-                <div className="buttons">
+                {/* <div className="buttons">
                   <button>SEE MORE</button>
                   <button>SUBSCRIBE</button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
-  
           <div className="thumbnail">
             {images.map((image, index) => (
               <div className="item" key={index}>
                 <img src={image.src} alt={image.title} />
-                <div className="content">
+                {/* <div className="content">
                   <div className="title">{image.title}</div>
                   <div className="description">Description</div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
-  
           <div className="arrows">
             <button id="prev" onClick={handlePrev}>
               {" "}
@@ -254,13 +265,11 @@ const Header = () => {
               &gt;{" "}
             </button>
           </div>
-  
           <div className="time"></div>
         </div>
       </div>
     </div>
   );
-  
 };
 
 export default Header;

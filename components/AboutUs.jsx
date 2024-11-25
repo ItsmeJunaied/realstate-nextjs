@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className=" flex flex-col-reverse lg:flex-row justify-between items-center mx-16 mt-10">
+    <div className=" flex flex-col-reverse lg:flex-row justify-between items-center ">
       {/* Left Part */}
       <div className=" flex flex-col gap-4 lg:w-1/2">
         <p className=" text-[#7c7c7c] text-base font-medium font-['Public Sans'] leading-normal tracking-[2.56px]">
@@ -41,8 +41,8 @@ const AboutUs = () => {
           and credibility.
         </p>
         <button className=" flex justify-start mb-5">
-          <div className="w-40 h-[46px] p-2.5 border border-[#0f2443] justify-center items-center gap-2.5 inline-flex">
-            <p className="text-[#0f2443] mb-4 text-sm font-light font-['Public Sans']">
+          <div className="w-40 h-[46px] p-2.5 border border-[#0f2443] justify-center items-center gap-2.5 inline-flex mb-4">
+            <p className="text-[#0f2443]  text-sm font-light font-['Public Sans']">
               Learn More
             </p>
           </div>
