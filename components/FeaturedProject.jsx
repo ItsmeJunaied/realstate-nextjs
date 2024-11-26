@@ -3,13 +3,45 @@
 import Slider from "react-slick";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 import React, { useRef, useState } from "react";
+// data.js
 
+
+const projects = [
+  {
+    id: 1,
+    title: "SKYMARK HOMES",
+    location: "Bashundhara Residential Area",
+    image: "/featureP2.png",
+    description: "Explore the luxury and comfort of Skymark Homes.",
+  },
+  {
+    id: 2,
+    title: "Flyte SOlutions",
+    location: "Gulshan, Dhaka",
+    image: "/featureP1.png",
+  },
+  {
+    id: 3,
+    title: "GREEN VALLEY",
+    location: "Uttara Sector 12",
+    image: "/featureP3.png",
+    description: "Modern living with a touch of nature.",
+  },
+  {
+    id: 4,
+    title: "URBAN PEAKS",
+    location: "Dhanmondi 32",
+    image: "/featureP1.png",
+    description: "An urban oasis in the heart of the city.",
+  },
+];
 const FeaturedProject = () => {
-  // Create array with 500 slides
-  const [slides, setSlides] = useState(
-    Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`)
-  );
+  const [activeTab, setActiveTab] = useState("ongoing");
+  const [slides, setSlides] = useState(projects);
 
+  const handleTabChange = (value) => {
+    setActiveTab(value);
+  };
   const slickSettings = {
     infinite: true,
     speed: 500,
@@ -28,7 +60,7 @@ const FeaturedProject = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -120,8 +152,8 @@ const FeaturedProject = () => {
 
       <div className=" w-full flex flex-col lg:flex-row mt-8  gap-4">
         {/* tabs */}
-        <div className=" lg:w-1/4 w-full h-full mb-16 lg:mb-0">
-          <Tabs defaultValue="ongoing" className="w-[400px]">
+        <div className=" lg:w-1/3 w-full h-full mb-16 lg:mb-0">
+          <Tabs defaultValue="ongoing" onValueChange={handleTabChange} className="w-[400px]">
             <TabsList className="flex flec-col  justify-start  ">
               <TabsTrigger value="ongoing">Ongoing Projects</TabsTrigger>
               <TabsTrigger value="upcoming">Upcoming Projects</TabsTrigger>
@@ -131,18 +163,15 @@ const FeaturedProject = () => {
         </div>
         {/* carousal */}
 
-        <div className=" lg:w-3/4 w-full ">
+        <div className=" lg:w-2/3 w-full ">
           <Slider {...slickSettings}>
-            {slides.map((_, index) => (
-              <div key={index}>
+            {slides.map((project) => (
+              <div key={project.id}>
                 <div className="card w-[400px]">
-                  <img
-                    src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80"
-                    alt=""
-                  />
+                  <img src={project.image} alt={project.title} />
                   <div className="card-content">
-                    <h2>SKYMARK HOMES</h2>
-                    <div className=" flex flex-row items-center gap-1">
+                    <h2>{project.title}</h2>
+                    <div className="flex flex-row items-center gap-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -159,9 +188,7 @@ const FeaturedProject = () => {
                           fill="white"
                         />
                       </svg>
-                      <p className="text-white text-sm">
-                        Bashundhara Residential Area
-                      </p>
+                      <p className="text-white text-sm">{project.location}</p>
                     </div>
 
                     <div className="w-[140px] h-[46px] mb-5 mt-7 p-2.5 border border-white justify-center items-center gap-2.5 inline-flex">

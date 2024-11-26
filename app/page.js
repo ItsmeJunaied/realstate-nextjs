@@ -15,7 +15,7 @@ const page = () => {
       </div>
 
       <FeaturedProject />
-      <div className=" px-16 pt-10">
+      <div className=" px-2 lg:px-16 pt-10">
         {" "}
         <Testimonial />
       </div>

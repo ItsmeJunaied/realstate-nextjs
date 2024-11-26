@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -248,10 +251,6 @@ const Header = () => {
             {images.map((image, index) => (
               <div className="item" key={index}>
                 <img src={image.src} alt={image.title} />
-                {/* <div className="content">
-                  <div className="title">{image.title}</div>
-                  <div className="description">Description</div>
-                </div> */}
               </div>
             ))}
           </div>
