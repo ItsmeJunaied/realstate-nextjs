@@ -1,6 +1,5 @@
 "use client";
-import { faHouse, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -121,7 +120,9 @@ const Header = () => {
 
           {/* Phone Number */}
           <div className="w-[140px] h-[46px] hidden lg:flex items-center gap-2 py-2 px-6 bg-transparent border-[2px] border-white text-sm text-white font-bold transition duration-200">
-            <FontAwesomeIcon icon={faPhone} size="sm" className="text-white" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
+  <path d="M12.5568 10.9062L12.1018 11.3591C12.1018 11.3591 11.0188 12.4351 8.0638 9.49716C5.10882 6.55918 6.19181 5.48319 6.19181 5.48319L6.47781 5.19719C7.18481 4.49519 7.25181 3.3672 6.63481 2.54321L5.37482 0.860218C4.61082 -0.159775 3.13584 -0.294774 2.26084 0.57522L0.690852 2.13521C0.257854 2.56721 -0.0321438 3.1252 0.00285598 3.7452C0.0928554 5.33219 0.81085 8.74516 4.81482 12.7271C9.0618 16.9491 13.0468 17.1171 14.6758 16.9651C15.1918 16.9171 15.6398 16.6551 16.0007 16.2951L17.4207 14.8831C18.3807 13.9301 18.1107 12.2951 16.8827 11.6281L14.9728 10.5892C14.1668 10.1522 13.1868 10.2802 12.5568 10.9062Z" fill="white"/>
+</svg>
             <p>16760</p>
           </div>
         </nav>

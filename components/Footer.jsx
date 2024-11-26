@@ -1,5 +1,4 @@
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Image from "next/image";
 import React from "react";
 import { Separator } from "./ui/separator";
@@ -13,21 +12,17 @@ const Footer = () => {
           <div>
             {/* hotline */}
             <div className="w-[140px] h-[46px] hidden lg:flex items-center gap-2 py-2 px-2 bg-transparent border-[2px] border-white text-sm text-white font-bold transition duration-200">
-              <FontAwesomeIcon
-                icon={faPhone}
-                size="base"
-                className="text-white"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M16.7424 15.208L16.1357 15.812C16.1357 15.812 14.6917 17.2466 10.7517 13.3293C6.81176 9.41199 8.25575 7.97734 8.25575 7.97734L8.63708 7.59601C9.57974 6.66001 9.66908 5.15602 8.84642 4.05736L7.16643 1.81338C6.14777 0.453389 4.18111 0.27339 3.01446 1.43338L0.921135 3.51337C0.343806 4.08936 -0.0428584 4.83336 0.00380797 5.66002C0.123807 7.77601 1.08113 12.3266 6.41976 17.6359C12.0824 23.2652 17.3957 23.4892 19.5677 23.2866C20.2557 23.2226 20.853 22.8732 21.3343 22.3932L23.2277 20.5106C24.5076 19.2399 24.1476 17.0599 22.5103 16.1706L19.9637 14.7853C18.889 14.2026 17.5824 14.3733 16.7424 15.208Z" fill="white"/>
+</svg>
               <p className=" ">16760</p>
             </div>
 
             {/* our number */}
             <div className="w-[140px] h-[46px] hidden lg:flex justify-start items-center gap-2 py-2  bg-transparent  text-sm text-white font-bold transition duration-200">
-              <FontAwesomeIcon
-                icon={faPhone}
-                size="sm"
-                className="text-white"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
+  <path d="M12.5568 10.9062L12.1018 11.3591C12.1018 11.3591 11.0188 12.4351 8.0638 9.49716C5.10882 6.55918 6.19181 5.48319 6.19181 5.48319L6.47781 5.19719C7.18481 4.49519 7.25181 3.3672 6.63481 2.54321L5.37482 0.860218C4.61082 -0.159775 3.13584 -0.294774 2.26084 0.57522L0.690852 2.13521C0.257854 2.56721 -0.0321438 3.1252 0.00285598 3.7452C0.0928554 5.33219 0.81085 8.74516 4.81482 12.7271C9.0618 16.9491 13.0468 17.1171 14.6758 16.9651C15.1918 16.9171 15.6398 16.6551 16.0007 16.2951L17.4207 14.8831C18.3807 13.9301 18.1107 12.2951 16.8827 11.6281L14.9728 10.5892C14.1668 10.1522 13.1868 10.2802 12.5568 10.9062Z" fill="white"/>
+</svg>
               <p>58816306-11</p>
             </div>
 
