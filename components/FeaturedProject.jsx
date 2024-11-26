@@ -45,27 +45,34 @@ const FeaturedProject = () => {
   const slickSettings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3,  // Default for large screens
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1545,  // When screen is smaller than 1545px
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1020,  // When screen is smaller than 1020px
+        settings: {
+          slidesToShow: 2,  // Change this based on your desired layout for smaller screens
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,  // For even smaller screens (tablets or phones)
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 320,
+        breakpoint: 320,  // For the smallest screens
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -73,6 +80,9 @@ const FeaturedProject = () => {
       },
     ],
   };
+  
+  
+  
 
   return (
     <div className="bg-[#F8F8F8] px-6 lg:px-16 pt-10">
@@ -167,7 +177,7 @@ const FeaturedProject = () => {
           <Slider {...slickSettings}>
             {slides.map((project) => (
               <div key={project.id}>
-                <div className="card w-[400px]">
+                <div className="card w-full ">
                   <img src={project.image} alt={project.title} />
                   <div className="card-content">
                     <h2>{project.title}</h2>

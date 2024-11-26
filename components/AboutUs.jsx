@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 const AboutUs = () => {
+  
   return (
     <div className=" flex flex-col-reverse lg:flex-row justify-between items-center ">
       {/* Left Part */}
