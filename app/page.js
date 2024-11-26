@@ -5,10 +5,13 @@ import FeaturedProject from "@/components/FeaturedProject";
 import Testimonial from "@/components/Testimonial";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const page = () => {
   return (
     <div>
+
+      <Navbar/>
       <Header/>
       <div className=" px-16 pt-10">
         <AboutUs />
